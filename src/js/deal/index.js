@@ -1,7 +1,5 @@
 /* Deal */
 
-import { mNow } from '../service/common';
-
 /**
  * @method calLongestCommonSubstring
  * @description 计算两个字符串的最长公共子串
@@ -746,4 +744,19 @@ export function loadScript ({ url, callback }) {
   }
   script.src = url;
   firstScript && firstScript.parentNode.insertBefore(script, firstScript);
+}
+
+/**
+ * @method mNow
+ * @description 时间戳
+ * @return {Number} 时间戳
+ */
+export function mNow () {
+  let ret = 0;
+  if (Date.now) {
+    ret = Date.now();
+  } else {
+    ret = new Date().getTime();
+  }
+  return ret;
 }
